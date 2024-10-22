@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather API Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin-top: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weather Forecast</h1>
+    <p>This page will display real-time weather forecasts.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Area</th>
+                <th>Forecast</th>
+            </tr>
+        </thead>
+        <tbody id="weather-data">
+            <!-- Data will be loaded here -->
+        </tbody>
+    </table>
+
+    <script>
+        async function fetchWeather() {
+            const response = await fetch('https://api.data.gov.sg/v1/environment/2-hour-weather-forecast');
+            const data = await response.json();
+            const forecasts = data.items[0].forecasts;
+            const tableBody = document.getElementById('weather-data');
+            forecasts.forEach(forecast => {
+                const row = `<tr><td>${forecast.area}</td><td>${forecast.forecast}</td></tr>`;
+                tableBody.innerHTML += row;
+            });
+        }
+        fetchWeather();
+    </script>
+</body>
+</html>
