@@ -15,6 +15,7 @@
             background: linear-gradient(to bottom, rgba(255,0,0,0.2), rgba(255,255,255,0.2), rgba(0,0,255,0.2));
             color: #333;
             text-align: center;
+            flex-direction: column;
         }
         .content {
             max-width: 800px;
@@ -28,11 +29,26 @@
             font-weight: bold;
             margin: 5px;
         }
-        iframe {
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            background-color: #333;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 10px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #555;
+        }
+        .iframe-container {
+            display: none;
+            margin-top: 20px;
             width: 100%;
             height: 600px;
-            border: none;
-            margin-top: 20px;
         }
     </style>
 </head>
@@ -41,7 +57,16 @@
         <h1>Visualization Dissection</h1>
         <h2>Wang Heping</h2>
         <h3>1009610</h3>
-        <iframe src="Wang Heping Assignment 2.pptx"></iframe>
+        <a class="button" onclick="showPPT()">Start</a>
+        <div class="iframe-container" id="pptFrame">
+            <iframe src="Wang Heping Assignment 2.pptx" width="100%" height="100%" style="border:none;"></iframe>
+        </div>
     </div>
+
+    <script>
+        function showPPT() {
+            document.getElementById('pptFrame').style.display = 'block';
+        }
+    </script>
 </body>
 </html>
