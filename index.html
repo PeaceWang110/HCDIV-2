@@ -7,19 +7,19 @@
     <style>
         body {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #8B0000, #4B0082, #00008B); 
             color: #ADD8E6;
             text-align: center;
-            flex-direction: column;
-            background: linear-gradient(to bottom right, #8B0000, #4B0082, #00008B); 
+            height: 100vh;
+            overflow: hidden;
         }
 
         .content {
-            max-width: 75vw; 
+            margin-top: 20px;
         }
 
         h1, h2, h3 {
@@ -30,9 +30,15 @@
         }
 
         .iframe-container {
-            width: 100%; 
-            height: 75vh; 
+            flex-grow: 1;
+            width: 100%;
             margin-top: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
     </style>
 </head>
@@ -41,10 +47,11 @@
         <h1>Visualization Dissection</h1>
         <h2>Wang Heping</h2>
         <h3>1009610</h3>
-        <div class="iframe-container">
-            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vS1bsg9mUGVykaOdlqOwckDz93rkan1jlqVVJzrrA6NrrJZWub76rm4DP3KAnvTkw/embed?start=true&loop=false&delayms=3000" 
-                    frameborder="0" width="100%" height="100%" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-        </div>
+    </div>
+    <div class="iframe-container">
+        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vS1bsg9mUGVykaOdlqOwckDz93rkan1jlqVVJzrrA6NrrJZWub76rm4DP3KAnvTkw/embed?start=true&loop=false&delayms=3000" 
+                allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
+        </iframe>
     </div>
 </body>
 </html>
