@@ -11,7 +11,7 @@
             align-items: center;
             margin: 0;
             font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom right, #8B0000, #4B0082, #00008B); 
+            background: linear-gradient(to bottom right, #8B0000, #4B0082, #00008B);
             color: #ADD8E6;
             text-align: center;
             height: 100vh;
@@ -30,12 +30,16 @@
         }
 
         .iframe-container {
-            flex-grow: 1;
+            position: relative;
             width: 100%;
+            padding-top: 56.25%; 
             margin-top: 20px;
         }
 
         iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             border: none;
