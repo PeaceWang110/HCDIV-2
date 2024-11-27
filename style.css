@@ -1,0 +1,61 @@
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom right, #8B0000, #4B0082, #00008B); 
+        color: #ADD8E6;
+        text-align: center;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .content {
+        margin-top: 20px;
+    }
+
+    h1, h2, h3 {
+        font-size: 36px;
+        font-weight: bold;
+        margin: 5px;
+        color: #ADD8E6;
+    }
+
+    .iframe-container {
+        position: relative;
+        width: 75%; 
+        padding-top: 42.1875%; 
+        margin-top: 20px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    .button-container {
+        margin: 20px;
+    }
+
+    button {
+        background-color: #ADD8E6;
+        color: #4B0082;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #FFFFFF;
+    }
+</style>
