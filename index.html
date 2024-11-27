@@ -45,6 +45,25 @@
             height: 100%;
             border: none;
         }
+
+        .button-container {
+            margin: 20px;
+        }
+
+        button {
+            background-color: #ADD8E6;
+            color: #4B0082;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #FFFFFF;
+        }
     </style>
 </head>
 <body>
@@ -53,10 +72,32 @@
         <h2>Wang Heping</h2>
         <h3>1009610</h3>
     </div>
+    <div class="button-container">
+        <button onclick="toggleTheme()">Toggle Theme</button>
+        <button onclick="reloadIframe()">Reload Presentation</button>
+    </div>
     <div class="iframe-container">
-        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vS1bsg9mUGVykaOdlqOwckDz93rkan1jlqVVJzrrA6NrrJZWub76rm4DP3KAnvTkw/embed?start=false&loop=false&delayms=60000"
+        <iframe id="presentation" src="https://docs.google.com/presentation/d/e/2PACX-1vS1bsg9mUGVykaOdlqOwckDz93rkan1jlqVVJzrrA6NrrJZWub76rm4DP3KAnvTkw/embed?start=false&loop=false&delayms=60000"
                 allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
         </iframe>
     </div>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            if (body.style.background === "white") {
+                body.style.background = "linear-gradient(to bottom right, #8B0000, #4B0082, #00008B)";
+                body.style.color = "#ADD8E6";
+            } else {
+                body.style.background = "white";
+                body.style.color = "black";
+            }
+        }
+
+        function reloadIframe() {
+            const iframe = document.getElementById('presentation');
+            iframe.src = iframe.src;
+        }
+    </script>
 </body>
 </html>
